@@ -218,7 +218,7 @@
                 return false;
             });
             $('#btn-buscar-employe').click(()=>{
-                data={search: $('#text-employe')};
+                data={search: $('#txt-employe').val()};
                 $.ajax({
                     type: "post",
                     url: "control/table_employe.php",

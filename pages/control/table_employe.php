@@ -1,7 +1,6 @@
 <?php 
     namespace control;
     include('Employe.php');
-
     $search = $_POST['search'];
     $empment = new Employe();
     $modalEdit=null;
