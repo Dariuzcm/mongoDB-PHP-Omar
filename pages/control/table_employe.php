@@ -89,7 +89,7 @@
                     url: "control/EmpleadoEliminar.php",
                     data: { _id: "'.$emp->_id.'"},
                     beforeSend: ()=>{
-                      $("#modal-delete-status").html("'."<div class='alert alert-light'>Excecute Deleting</div>".'");
+                      $("#modal-delete-status").html("'."<div class='alert alert-light'>Execute Deleting</div>".'");
                     },
                     success: function (response) {
                       $("#modal-delete-status").html(response);
@@ -114,12 +114,13 @@
                   <form class="form-control" id="editform">
                     <div class="form-control">
                     <div id="modal-status-'.$emp->_id.'"></div>
-                    <h6 class="card-header">Nombre: <input required name="nombre" id="input-nombre-'.$emp->_id.'"type="date" class="form-control" value="'.$emp->nombre.'"></h6>
+                    <h6 class="card-header">Nombre: <input required name="_id" readonly type="text" class="form-control" value="'.$emp->_id.'"></h6>                  
+                    <h6 class="card-header">Nombre: <input required name="nombre" id="input-nombre-'.$emp->_id.'"type="text" class="form-control" value="'.$emp->nombre.'"></h6>
                     <h6 class="card-header">Apellidos: <input required name="apellido" id="input-apellido-'.$emp->_id.'" type="text" class="form-control"value="'.$emp->apellido.'"></h6>
-                    <h6 class="card-header">Telefono: <input required name="telefono" id="input-telefono-'.$emp->_id.'" type="text" class="form-control" value="'.$emp->telefono.'"></h6>
-                    <h6 class="card-header">Email: <input required name="email" id="input-email-'.$emp->_id.'" type="number" class="form-control"value="'.$emp->email.'" ></h6>
-                    <h6 class="card-header">Fecha de nacimiento: <input required name="fecha_nac" id="input-fecha_nac-'.$emp->_id.'" type="text" class="form-control" value="'.$emp->fecha_nac.'"></h6>
-                    <h6 class="card-header">Fecha de ingreso: <input required name="fecha_in" id="input-fecha_in-'.$emp->_id.'" type="text" class="form-control" value="'.$emp->fecha_in.'"></h6>
+                    <h6 class="card-header">Telefono: <input required name="telefono" id="input-telefono-'.$emp->_id.'" type="phone" class="form-control" value="'.$emp->telefono.'"></h6>
+                    <h6 class="card-header">Email: <input required name="email" id="input-email-'.$emp->_id.'" type="email" class="form-control"value="'.$emp->email.'" ></h6>
+                    <h6 class="card-header">Fecha de nacimiento: <input required name="fecha_nac" id="input-fecha_nac-'.$emp->_id.'" type="date" class="form-control" value="'.$emp->fecha_nac.'"></h6>
+                    <h6 class="card-header">Fecha de ingreso: <input required name="fecha_in" id="input-fecha_in-'.$emp->_id.'" type="date" class="form-control" value="'.$emp->fecha_in.'"></h6>
                          </div>
                   </div>
                   <div class="modal-footer">

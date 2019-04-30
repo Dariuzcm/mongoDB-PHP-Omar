@@ -12,9 +12,9 @@ class Employe
         $regex = $con->regex($pattern);
         $result = $collectionEmploye->find(array(
             '$or' => array(
-                ["receptor" => $regex],
-                ["emisor" => $regex],
-                ["cantidad" => $regex],
+                ["nombre" => $regex],
+                ["apellido" => $regex],
+                ['_id'=>$regex]
             ),
         ));
         return $result;
@@ -52,7 +52,7 @@ class Employe
         return $result;
     }
 
-    public function update($fecha,$emisor,$receptor,$cantidad,$motivo,$_id)
+    public function update($data)
     {
 
         $con = new Conexion();
@@ -60,13 +60,14 @@ class Employe
         try {
 
             $collectionEmployes->replaceOne(
-                ['_id' =>new \MongoDB\BSON\ObjectId($_id)],
+                ['_id' =>new \MongoDB\BSON\ObjectId($data['_id']),
                 [
-                    "fecha" => $fecha,
-                    "emisor" => $emisor,
-                    "receptor" => $receptor,
-                    "cantidad" => $cantidad,
-                    "motivo" => $motivo,
+                    "nombre" => $data['nombre'],
+                    "apellido" => $data['apellido'],
+                    "telefono" => $data]['telefono'],
+                    "email" => $data['email'],
+                    "fecha_nac" => $data['fecha_nac'],
+                    "fecha_in" => $data['fecha_in'],
                 ]
             );
 
