@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+ 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Registrarse</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="../assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/libs/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="icon" type="image/png" href="../assets/images/logo.png" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    </style>
+</head>
+<!-- ============================================================== -->
+<!-- signup form  -->
+<!-- ============================================================== -->
+
+<body>
+    <!-- ============================================================== -->
+    <!-- signup form  -->
+    <!-- ============================================================== -->
+    <form class="splash-container">
+        <div class="card">
+            <div class="card-header text-center">
+                <a href="../index.html"><img class="logo-img" src="../assets/images/logo.png" alt="logo" width="60%" height="50%"></a>
+                <h3 class="mb-1">Formulario de registro</h3>
+                <p></p>
+            </div>
+            <div id="status">
+                <div class="alert alert-light">Por favor introduzca la informaci&oacute;n del usuario.</div>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <input class="form-control form-control-lg" type="text" id="username"name="usuario" required="" placeholder="Username" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input class="form-control form-control-lg" id="pass1" type="password" name="contra" required="" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <input class="form-control form-control-lg" required="" placeholder="Confirm password">
+                </div>
+                <div class="form-group pt-2">
+                    <button class="btn btn-block btn-primary" id="btn-Reg" type="submit">Registrar mi cuenta</button>
+                </div>
+            </div>
+            <div class="card-footer bg-white text-center">
+                <p>Ya tienes cuenta? <a href="../pages/login.html" class="text-secondary">Inicia sesi&oacute;n aqu&iacute;.</a></p>
+            </div>
+        </div>
+    </form>
+</body>
+
+
+ <script src="../assets/js/User_register.js"></script>
+</html>

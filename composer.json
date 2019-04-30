@@ -1,0 +1,6 @@
+{
+	"require": {
+        "rackspace/php-opencloud": "dev-master",
+		"mongodb/mongodb": "^1.4"
+    }
+}
