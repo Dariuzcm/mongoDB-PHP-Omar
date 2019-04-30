@@ -124,7 +124,7 @@
                                                 <div class="card">
                                                 <h3 class="card-header">Resultados</h3> 
                                                         <input type="text" id="txt-project" class="form-control">
-                                                        <button type="submit" class="btn btn-succes" id="btn-buscar-project">Buscar Proyectos</button>
+                                                        <button type="submit" class="btn btn-success" id="btn-buscar-project">Buscar Proyectos</button>
                                                     <div class="card-body">
                                                         <div id="search-status"></div>
                                                         <div id="table-div" class="table-responsive">
@@ -213,7 +213,7 @@
             });
             return false;
         });
-        $("#btn-buscar-proyect").click(()=>{
+        $("#btn-buscar-project").click(()=>{
             $.ajax({
                 type: "post",
                 url: "control/project_table.php",

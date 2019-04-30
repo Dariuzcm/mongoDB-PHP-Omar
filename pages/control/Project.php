@@ -3,16 +3,11 @@ namespace control;
 include 'connection.php';
 class Project
 {
-    protected $proyect_name;
-    protected $begin_date;
-    protected $end_date;
-    protected $manager_name;
-    protected $client_name;
 
     public function findPattern($pattern)
     {
         $con = new Conexion();
-        $collectionPayment = $con->getProjects();
+        $collectionPayment = $con->getProject();
         $regex = $con->regex($pattern);
         $result = $collectionPayment->find(array(
             '$or' => array(
@@ -70,15 +65,15 @@ class Project
         $con = new Conexion();
         $collectionProjects = $con->getProject();
         try {
-
+            print_r($data);
             $collectionProjects->replaceOne(
-                ['_id' =>new \MongoDB\BSON\ObjectId($_id)],
+                ['_id' =>new \MongoDB\BSON\ObjectId($data['_id'])],
                 [
-                    "fecha" => $fecha,
-                    "emisor" => $emisor,
-                    "receptor" => $receptor,
-                    "cantidad" => $cantidad,
-                    "motivo" => $motivo,
+                    'proyect_name'=>$data['proyect_name'],
+                    'begin_date'=>$data['begin_date'],
+                    'end_date'=>$data['end_date'],
+                    'manager_name'=>$data['manager_name'],
+                    'client_name'=>$data['client_name']
                 ]
             );
 
