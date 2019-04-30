@@ -76,6 +76,7 @@
                                             <div class="card">
                                                 <h5 class="card-header">Campos obligatorios (*)</h5>
                                                 <div class="card-body">
+                                                    <div id="status"></div>
                                                     <form id="basicform">
                                                         <div class="form-group">
                                                             <label for="">Nombres*</label>
@@ -107,7 +108,7 @@
                                                             </div>
                                                             <div class="col-sm-6 pl-0">
                                                                 <p class="text-right">
-                                                                    <button type="submit" class="btn btn-space btn-primary">Guardar</button>
+                                                                    <button type="submit" class="btn btn-space btn-primary" id="save_employe">Guardar</button>
                                                                     <button class="btn btn-space btn-secondary">Cancelar</button>
                                                                 </p>
                                                             </div>
@@ -324,15 +325,21 @@
     <script src="../assets/vendor/inputmask/js/jquery.inputmask.bundle.js"></script>
     <script>
         $(document).ready(function () {
-            data= $('#basicform').serialize();
-            $.ajax({
-                type: "post",
-                url: "control/EmployRegister",
-                data: data,
-                success: function (response) {
-                    
-                }
+            $('#save_employe').click(function () { 
+                data= $('#basicform').serialize();
+                $.ajax({
+                    type: "post",
+                    url: "control/EmployRegister",
+                    data: data,
+                    beforeSend: function(){
+                        $('#status').html("<div class='alert alert-primary'>Realizando Registro</div>");
+                    }
+                    success: function (response) {
+                        $('#status').html(response);
+                    }
+                });
             });
+            
         });
     </script>
     
