@@ -224,9 +224,12 @@
                     url: "control/table_employe.php",
                     data: data,
                     beforeSend:()=>{
+                        $('#search-status').html("<div class='alert alert-primary'>Realizando Busqueda</div>");
                         
                     },
                     success: function (response) {
+                        $('#search-status').html("");
+                        $('#table-div').html(response);
                         
                     }
                 });
